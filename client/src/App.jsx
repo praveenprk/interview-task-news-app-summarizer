@@ -8,7 +8,6 @@ const App = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
 
-
   const fetchNews = async (keyword) => {
     setLoading(true);
     try {
@@ -21,8 +20,8 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>AI-Powered News Search Application</h1>
+    <div className="container mx-auto p-4">
+      <h1 className="text-3xl font-bold text-center mb-4">AI-Powered News Search Application</h1>
       <SearchBar onSearch={fetchNews} />
       {loading ? <Loader /> : <NewsList articles={articles} />}
     </div>

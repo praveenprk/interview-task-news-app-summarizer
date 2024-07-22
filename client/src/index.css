@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.spinner-border {
+    border-top-color: #0066dd;
+}
+  
