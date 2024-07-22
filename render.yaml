@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: ai-powered-news-app-backend
+    env: node
+    region: oregon
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
