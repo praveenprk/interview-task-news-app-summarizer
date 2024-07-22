@@ -15,7 +15,7 @@ const App = () => {
     }
     setLoading(true);
     try {
-      const response = await axios.get(`https://ai-powered-news-app-backend.onrender.com/news?keyword=${keyword}`);
+      const response = await axios.get(`http://localhost:5250/news?keyword=${keyword}`);
       setArticles(response.data.articles);
     } catch (error) {
       console.error("Error fetching news", error);
