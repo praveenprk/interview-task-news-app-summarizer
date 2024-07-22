@@ -9,6 +9,10 @@ const App = () => {
   const [loading, setLoading] = useState(false);
 
   const fetchNews = async (keyword) => {
+    if (keyword.trim() === '') {
+      setArticles([]);
+      return;
+    }
     setLoading(true);
     try {
       const response = await axios.get(`http://localhost:5250/news?keyword=${keyword}`);

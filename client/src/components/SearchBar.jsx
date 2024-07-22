@@ -1,18 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const SearchBar = ({ onSearch }) => {
   const [keyword, setKeyword] = useState('');
+
+  useEffect(() => {
+    if (keyword === '') {
+      onSearch('');
+    }
+  }, [keyword]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onSearch(keyword);
   };
-
+ 
   return (
     <form onSubmit={handleSubmit} className="flex justify-center mb-4">
       <input
         className='border-solid border-2 border-sky-500 rounded-l-lg'
         type="text"
+        required
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
         placeholder="Search for news articles..."
