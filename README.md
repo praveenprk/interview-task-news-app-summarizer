@@ -27,13 +27,13 @@ Before you begin, ensure you have met the following requirements:
     cd interview-task-news-app-summarizer
     ```
 
-2. **Install backend dependencies**:
+2. **Install server/backend dependencies**:
     ```sh
-    cd backend
+    cd server
     npm install
     ```
 
-3. **Create a `.env` file in the `backend` directory** and add your API keys:
+3. **Create a `.env` file in the `server` directory** and add your API keys:
     ```
     NEWS_API_KEY=your_news_api_key
     OPENAI_API_KEY=your_openai_api_key
@@ -48,17 +48,17 @@ Before you begin, ensure you have met the following requirements:
 
 ### Frontend Setup
 
-1. **Navigate to the `frontend` directory**:
+1. **Navigate to the `client` directory**:
     ```sh
-    cd ../frontend
+    cd ../client
     ```
 
-2. **Install frontend dependencies**:
+2. **Install client/frontend dependencies**:
     ```sh
     npm install
     ```
 
-3. **Start the frontend application**:
+3. **Start the client/frontend application**:
     ```sh
     npm start
     ```
@@ -95,13 +95,13 @@ Before you begin, ensure you have met the following requirements:
 
 1. **Start the backend server** (if not already started):
     ```sh
-    cd backend
+    cd server
     npm start
     ```
 
 2. **Start the frontend application** (if not already started):
     ```sh
-    cd frontend
+    cd client
     npm start
     ```
 
