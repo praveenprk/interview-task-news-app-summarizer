@@ -1,4 +1,4 @@
-# AI-Powered News Search Application
+# AI-Powered News Search and Summarizer Application 
 
 This project is an AI-powered news search application that allows users to search for news articles using a keyword. The application leverages a third-party news API for fetching news articles and uses OpenAI's API to summarize the content of the articles.
 
