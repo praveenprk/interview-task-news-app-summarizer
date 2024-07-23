@@ -3,6 +3,7 @@ import axios from 'axios';
 import SearchBar from './components/SearchBar';
 import NewsList from './components/NewsList';
 import Loader from './components/Loader';
+import './index.css';
 
 interface Article {
   title: string;
