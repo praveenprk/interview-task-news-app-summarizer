@@ -1,7 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, FormEvent, ChangeEvent } from 'react';
 
-const SearchBar = ({ onSearch }) => {
-  const [keyword, setKeyword] = useState('');
+interface SearchBarProps {
+  onSearch: (keyword: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+  const [keyword, setKeyword] = useState<string>('');
 
   useEffect(() => {
     if (keyword === '') {
@@ -9,7 +13,7 @@ const SearchBar = ({ onSearch }) => {
     }
   }, [keyword]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onSearch(keyword);
   };

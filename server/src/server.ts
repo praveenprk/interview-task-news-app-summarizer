@@ -1,8 +1,11 @@
-const express = require('express');
-const axios = require('axios');
+// const express = require('express');
+// const axios = require('axios');
 const cors = require('cors');
 const { OpenAI } = require('openai');
 require('dotenv').config();
+import express, { Request, Response } from 'express';
+import axios from 'axios';
+import dotenv from 'dotenv';
 
 const app = express();
 const PORT = 5250;
@@ -17,14 +20,14 @@ const configuration = new OpenAI({
 });
 const openai = new OpenAI(configuration);
 
-app.get('/news', async (req, res) => {
-  const keyword = req.query.keyword;
+app.get('/news', async (req: Request, res: Response) => {
+  const keyword = req.query.keyword as string;
 
   try {
     const newsResponse = await axios.get(`https://newsapi.org/v2/everything?q=${keyword}&apiKey=${NEWS_API_KEY}`);
     const articles = newsResponse.data.articles;
 
-    const summarizedArticles = await Promise.all(articles.map(async (article) => {
+    const summarizedArticles = await Promise.all(articles.map(async (article: any) => {
       const summary = await summarizeArticle(article.content);
       return {
         ...article,
@@ -39,7 +42,7 @@ app.get('/news', async (req, res) => {
   }
 });
 
-const summarizeArticle = async (content) => {
+const summarizeArticle = async (content: string) => {
   try {
     const response = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo', // @TODO: https://stackoverflow.com/questions/77789886/openai-api-error-the-model-text-davinci-003-has-been-deprecated

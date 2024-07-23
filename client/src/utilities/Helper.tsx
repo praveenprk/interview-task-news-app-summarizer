@@ -1,14 +1,14 @@
 import React from 'react'
 
-const Source = () => {
+const Source: React.FC = () => {
   return <span className='italic font-medium'>Source: {' '}</span>;
 }
 
-const Summary = () => {
+const Summary: React.FC = () => {
   return <span className='font-semibold'>Summary:{' '}</span>;
 }
 
-const PublishedAt = () => {
+const PublishedAt: React.FC = () => {
   return <span className='italic font-medium'>Published On:{' '}</span>;
 }
 

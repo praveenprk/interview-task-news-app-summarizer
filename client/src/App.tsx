@@ -3,12 +3,20 @@ import axios from 'axios';
 import SearchBar from './components/SearchBar';
 import NewsList from './components/NewsList';
 import Loader from './components/Loader';
+import './index.css';
 
-const App = () => {
-  const [articles, setArticles] = useState([]);
+interface Article {
+  title: string;
+  source: { name: string };
+  publishedAt: string;
+  summary: string;
+}
+
+const App: React.FC = () => {
+  const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const fetchNews = async (keyword) => {
+  const fetchNews = async (keyword: string) => {
     if (keyword.trim() === '') {
       setArticles([]);
       return;

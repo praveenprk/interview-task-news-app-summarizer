@@ -1,7 +1,19 @@
 import React from 'react';
 import NewsItem from './NewsItem';
 
-const NewsList = ({ articles }) => {
+interface Article {
+  title: string;
+  source: { name: string };
+  publishedAt: string;
+  summary: string;
+}
+
+interface NewsListProps {
+  articles: Article[];
+}
+
+
+const NewsList: React.FC<NewsListProps> = ({ articles }) => {
   return (
     <div className="space-y-4">
       {(articles.length > 0) ? articles.map((article, index) => (
